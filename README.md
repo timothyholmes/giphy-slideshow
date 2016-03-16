@@ -1,6 +1,8 @@
 # Giphy Slideshow
 
-# Building
+Slideshow created using Giphy's API.
+
+## Building
 
 Instructions intended for Linux users. Mac users may need to prefix these comands with the 'sudo' keyword.
 
