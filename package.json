@@ -1,21 +1,18 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "main": "",
+  "name": "giphy-slideshow",
+  "description": "Slideshow built with Giphy's API",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/timothyholmes/giphy-slideshow.git"
   },
   "author": "Tim Holmes",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/timothyholmes/giphy-slideshow/issues"
   },
-  "homepage": "",
   "devDependencies": {
     "del": "^2.2.0",
     "es6-promise": "^3.1.2",
