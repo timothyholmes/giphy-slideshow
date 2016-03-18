@@ -5,6 +5,7 @@
 	.controller('SlideshowController', ['$scope', 'DataService', function($scope, DataService) {
 
 		$scope.query = 'pugs';
+		$scope.index = 0;
 		
 		var  promise = function(path) {
 			DataService.getGifs(path)
