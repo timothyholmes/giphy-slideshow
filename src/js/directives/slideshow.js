@@ -26,6 +26,8 @@
 			promise(path);
 		};
 
+		$scope.search();
+
     }])
     
     .directive('thSlideshow', function () {

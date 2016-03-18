@@ -12,3 +12,5 @@
 <span data-ng-repeat='result in results'>
 	<img data-ng-src='{{::result.images.original.url}}'>
 </span>
+
+<p data-ng-show='!results.length'>No results for {{query}}</p>
