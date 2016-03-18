@@ -2,8 +2,10 @@
 
 	angular.module('giphyApp')
 
-	.controller('SlideshowController', ['$scope', 'dtMgr', function($scope, dataManager) {
-		
+	.controller('SlideshowController', ['$scope', 'dataService', function($scope, dataService) {
+		dataService.getData('http://api.giphy.com/v1/gifs/search?q=pugs&api_key=dc6zaTOxFJmzC', function(response){
+			$scope.results = response.data.data;
+		});
     }])
     
     .directive('thSlideshow', function () {
