@@ -1,0 +1,17 @@
+nav {
+  box-shadow: 0px 0px 5px 1px #888888;
+  height: 75px;
+  position: relative; }
+  nav li {
+    display: inline;
+    list-style-type: none; }
+  nav .search-bar {
+    width: 75vw; }
+  nav .form-control {
+    display: inline; }
+  nav ul {
+    position: absolute;
+    top: 25%; }
+  nav a:hover {
+    cursor: pointer;
+    cursor: hand; }

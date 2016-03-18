@@ -1,3 +1,14 @@
-<section data-ng-repeat='result in results'>
+<nav>
+	<ul>
+		<li><a class="" data-ng-click=''><span class='glyphicon glyphicon-chevron-left'></span></a></li>
+		<li><a class="" data-ng-click=''><span class='glyphicon glyphicon-chevron-right'></span></a></li>
+		<li class="form-group">
+	           <input type="text" name="query" class="form-control search-bar" data-ng-model="query">
+	    </li>
+		<li><a class="" data-ng-click=''><span class='glyphicon glyphicon-search'></span></a></li>
+	</ul>
+</nav>
+
+<span data-ng-repeat='result in results'>
 	<img data-ng-src='{{::result.images.original.url}}'>
-</section>
+</span>
