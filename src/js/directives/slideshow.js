@@ -21,9 +21,11 @@
 		};
 
 		$scope.search = function() {
+			$scope.results = [];
 			var path = 'http://api.giphy.com/v1/gifs/search?q=' +
 				$scope.query + 
 				'&api_key=dc6zaTOxFJmzC';
+			$scope.index = 0;
 			promise(path);
 		};
 
