@@ -5,10 +5,8 @@
 	.controller('SlideshowController', ['$scope', 'DataService', function($scope, DataService) {
 
 		$scope.query = 'pugs';
-
-		var path = 'http://api.giphy.com/v1/gifs/search?q=pugs&api_key=dc6zaTOxFJmzC';
 		
-		var  promise = function() {
+		var  promise = function(path) {
 			DataService.getGifs(path)
 			.then(function(response) {
 				if(response.data.length != null) {
@@ -21,7 +19,12 @@
 			});
 		};
 
-		promise();
+		$scope.search = function() {
+			var path = 'http://api.giphy.com/v1/gifs/search?q=' +
+				$scope.query + 
+				'&api_key=dc6zaTOxFJmzC';
+			promise(path);
+		};
 
     }])
     
