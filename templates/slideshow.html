@@ -7,8 +7,10 @@
 	</ul>
 </nav>
 
-<span><button class="btn btn-primary" data-ng-disabled='index == 0' data-ng-click='index = index - 1'><span class='glyphicon glyphicon-chevron-left'></span></button></span>
-<img data-ng-src='{{results[index].images.original.url}}'>
-<span><button class="btn btn-primary" data-ng-disabled='index == results.length - 1' data-ng-click='index = index + 1'><span class='glyphicon glyphicon-chevron-right'></span></button></span>
+<div class='slideshow-content'>
+	<span><button class="btn btn-primary" data-ng-disabled='index == 0' data-ng-click='index = index - 1'><span class='glyphicon glyphicon-chevron-left'></span></button></span>
+	<img data-ng-src='{{results[index].images.fixed_width.url}}'>
+	<span><button class="btn btn-primary" data-ng-disabled='index == results.length - 1' data-ng-click='index = index + 1'><span class='glyphicon glyphicon-chevron-right'></span></button></span>
+</div>
 
 <p data-ng-show='!results.length'>No results for {{query}}</p>
