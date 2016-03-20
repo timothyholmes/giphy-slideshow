@@ -7,6 +7,7 @@ var gulpIf = require('gulp-if');
 var cssnano = require('gulp-cssnano');
 var del = require('del');
 var runSequence = require('run-sequence');
+var connect = require('gulp-connect');
 
 gulp.task('sass', function(){
   return gulp.src('src/scss/**/*.scss')
@@ -37,6 +38,10 @@ gulp.task('build', function (callback) {
     callback
   )
 })
+
+gulp.task('webserver', function() {
+  connect.server();
+});
 
 gulp.task('default', function (callback) {
   runSequence(['sass','watch'],
