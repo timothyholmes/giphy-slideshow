@@ -18,6 +18,11 @@ To compile sass, minify css, and minify JS into a 'dist' folder
 gulp build
 ```
 
+To run webserver
+```shell
+gulp webserver
+```
+
 Note: To use gulp, make sure you have it installed globally on your system
 
 ```shell
