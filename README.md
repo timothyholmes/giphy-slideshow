@@ -23,7 +23,7 @@ Note: To use gulp, make sure you have it installed globally on your system
 npm install gulp -g
 ```
 
-Default build
+Default build (build project + start webserver + watch sass)
 
 ```shell
 gulp default
