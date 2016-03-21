@@ -1,20 +1,30 @@
 <nav>
 	<ul>
 		<li class="form-group">
-	        <input type="text" name="query" class="form-control search-bar" data-ng-model="query">
+	        <input type="text" name="query" class="form-control search-bar" data-ng-model="sldshwCtrl.query">
 	    </li>
 		<li>
-			<a class="" data-ng-click='search()'>
+			<a class="" data-ng-click='sldshwCtrl.search()'>
 				<span class='glyphicon glyphicon-search'></span>
 			</a>
 		</li>
 	</ul>
 </nav>
 
-<div class='slideshow-content'>
-	<span><button class="btn btn-primary" data-ng-disabled='index == 0' data-ng-click='index = index - 1'><span class='glyphicon glyphicon-chevron-left'></span></button></span>
-	<img data-ng-src='{{results[index].images.fixed_width.url}}'>
-	<span><button class="btn btn-primary" data-ng-disabled='index == results.length - 1' data-ng-click='index = index + 1'><span class='glyphicon glyphicon-chevron-right'></span></button></span>
+<div class='slideshow-content container'>
+	<span class='col-xs-1 chevron'>
+		<button class="btn btn-primary" data-ng-disabled='sldshwCtrl.index == 0' data-ng-click='sldshwCtrl.index = sldshwCtrl.index - 1'>
+			<span class='glyphicon glyphicon-chevron-left'></span>
+		</button>
+	</span>
+	<span class=col-xs-10>
+		<img class='img-responsive' data-ng-src='{{sldshwCtrl.results[sldshwCtrl.index].images.original.url}}'>
+	</span>
+	<span class='col-xs-1 chevron'>
+		<button class="btn btn-primary" data-ng-disabled='sldshwCtrl.index == sldshwCtrl.results.length - 1' data-ng-click='sldshwCtrl.index = sldshwCtrl.index + 1'>
+			<span class='glyphicon glyphicon-chevron-right'></span>
+		</button>
+	</span>
 </div>
 
-<p data-ng-show='!results.length'>No results for {{query}}</p>
+<p data-ng-show='!sldshwCtrl.results.length'>No results for {{sldshwCtrl.query}}</p>

@@ -4,28 +4,30 @@
 
 	.controller('SlideshowController', ['$scope', 'DataService', function($scope, DataService) {
 
-		$scope.query = 'pugs';
-		$scope.results = [];
+		var _this = this;
+
+		_this.query = 'pugs';
+		_this.results = [];
 		
-		var  promise = function(path) {
+		var promise = function(path) {
 			DataService.getGifs(path)
 			.then(function(response) {
 				if(response.data.length != null) {
-					$scope.results = response.data;
+					_this.results = response.data;
 				} else {
-					$scope.results = [];
+					_this.results = [];
 				}
 			}, function(error) {
 				console.log('error\n' + error);
 			});
 		};
 
-		$scope.search = function() {
-			$scope.index = 0;
-			promise($scope.query);
+		_this.search = function() {
+			_this.index = 0;
+			promise(_this.query);
 		};
 
-		$scope.search();
+		_this.search();
 
     }])
     

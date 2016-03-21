@@ -58,11 +58,15 @@ gulp.task('webserver', function() {
   connect.server({
     root: './dist/',
     port: 8080
+  });
+  connect.server({
+    root: './src/',
+    port: 9090
   })
 });
 
 gulp.task('default', function (callback) {
-  runSequence(['build', 'webserver'],
+  runSequence(['build', 'webserver', 'watch'],
     callback
   )
 })
