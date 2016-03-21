@@ -1,6 +1,6 @@
 # Giphy Slideshow
 
-Slideshow created using Giphy's API.
+Slideshow created using Giphy's API. After building, the app is viewable at localhost:8080
 
 ## Building
 
@@ -18,7 +18,7 @@ Note: To use gulp, make sure you have it installed globally on your system
 npm install gulp -g
 ```
 
-To compile sass, minify css and js, and run the webserver at localhost:8080.
+Default build
 
 ```shell
 gulp default
@@ -33,6 +33,13 @@ gulp build
 ```
 
 To run webserver
+
 ```shell
 gulp webserver
+```
+
+Watch Sass for changes
+
+```shell
+gulp watch
 ```

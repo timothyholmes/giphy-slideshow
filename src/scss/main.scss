@@ -1,22 +1,22 @@
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
-}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700);
 
 body {
 	background-color: #F4F4F8;
+	font-family: 'Roboto', sans-serif;
 }
 
 nav {
 	box-shadow: 0px 0px 5px 1px #888888;
 	background-color: #FFFFFF;
-	height: 75px;
+	height: 65px;
 	position: relative;
 	li {
 		display: inline;
 		list-style-type: none;
 	}
 	.search-bar {
-		width: 75vw;
+		width: 98%;
+		margin: 1%;
 	}
 	.form-control {
 		display: inline;
@@ -40,4 +40,11 @@ nav {
 	img {
 		width: 100%;
 	}
+}
+
+.no-results {
+	text-align: center;
+	margin-top: 35px;
+	font-size: 5em;
+	font-weight: 700;
 }

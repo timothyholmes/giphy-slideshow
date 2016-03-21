@@ -6,7 +6,7 @@
 
 		var _this = this;
 
-		_this.query = 'pugs';
+		$scope.query = 'pugs';
 		_this.results = [];
 		
 		var promise = function(path) {
@@ -23,11 +23,16 @@
 		};
 
 		_this.search = function() {
+			_this.results = [];
 			_this.index = 0;
-			promise(_this.query);
+			promise($scope.query);
 		};
 
 		_this.search();
+
+		$scope.$watch("query", function(newValue, oldValue) {
+			_this.search();
+		});
 
     }])
     
