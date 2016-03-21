@@ -5,7 +5,7 @@
 	.controller('SlideshowController', ['$scope', 'DataService', function($scope, DataService) {
 
 		$scope.query = 'pugs';
-		$scope.index = 0;
+		$scope.results = [];
 		
 		var  promise = function(path) {
 			DataService.getGifs(path)
@@ -13,7 +13,7 @@
 				if(response.data.length != null) {
 					$scope.results = response.data;
 				} else {
-					$scope.results = response.data;
+					$scope.results = [];
 				}
 			}, function(error) {
 				console.log('error\n' + error);
@@ -21,12 +21,8 @@
 		};
 
 		$scope.search = function() {
-			$scope.results = [];
-			var path = 'http://api.giphy.com/v1/gifs/search?q=' +
-				$scope.query + 
-				'&api_key=dc6zaTOxFJmzC';
 			$scope.index = 0;
-			promise(path);
+			promise($scope.query);
 		};
 
 		$scope.search();
@@ -35,17 +31,11 @@
     
     .directive('thSlideshow', function () {
 
-    	var link = function (scope, ele, attrs) {
-			
-	    };
-
     	var directiveDefinitionObject = {
 			restrict: 'E',
-			templateUrl: '../templates/slideshow.html',
+			templateUrl: './templates/slideshow.html',
 			controller: 'SlideshowController',
-			controllerAs: 'sldshwCtrl',
-			scope: {},
-			link: link
+			controllerAs: 'sldshwCtrl'
 		};
 
 		return directiveDefinitionObject;

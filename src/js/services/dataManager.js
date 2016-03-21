@@ -6,8 +6,8 @@
 	
 	.factory('DataService', function ($http, $q) {
 		return {
-			getGifs: function(path) {
-				return $http.get(path)
+			getGifs: function(args) {
+				return $http.get('http://api.giphy.com/v1/gifs/search?q=' + args + '&api_key=dc6zaTOxFJmzC')
 				.then(function(response) {
 					if (typeof response.data === 'object') {
 						return response.data;

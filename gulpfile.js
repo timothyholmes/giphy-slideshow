@@ -8,6 +8,19 @@ var cssnano = require('gulp-cssnano');
 var del = require('del');
 var runSequence = require('run-sequence');
 var connect = require('gulp-connect');
+var flatten = require('gulp-flatten');
+
+gulp.task('move-vendor', function(){
+  return gulp.src('./src/vendor/*')
+  .pipe(flatten())  
+  .pipe(gulp.dest('./dist/vendor/'));
+});
+
+gulp.task('move-templates', function(){
+  return gulp.src('./src/templates/*')
+  .pipe(flatten())  
+  .pipe(gulp.dest('./dist/templates/'));
+});
 
 gulp.task('sass', function(){
   return gulp.src('src/scss/**/*.scss')
@@ -35,16 +48,21 @@ gulp.task('build', function (callback) {
   runSequence('clean:dist', 
     'sass', 
     'useref',
+    'move-vendor',
+    'move-templates',
     callback
   )
 })
 
 gulp.task('webserver', function() {
-  connect.server();
+  connect.server({
+    root: './dist/',
+    port: 8080
+  })
 });
 
 gulp.task('default', function (callback) {
-  runSequence(['sass','watch'],
+  runSequence(['build', 'webserver'],
     callback
   )
 })
