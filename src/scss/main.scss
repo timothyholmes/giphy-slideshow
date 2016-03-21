@@ -52,15 +52,13 @@ nav {
 			background-color: $main-color;
 			box-shadow: 1px 1px 0px #888888;
 			&:hover {
-				color: white;
+				background-color: darken($main-color, 7%);
 			}
 			&:active {
-				color: white;
 				box-shadow: none;
 				outline: none;
 			}
 			&:focus {
-				color: white;
 				outline: none;
 			}
 			&:disabled {
