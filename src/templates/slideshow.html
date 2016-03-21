@@ -5,7 +5,7 @@
 <div class='slideshow-content container' data-ng-hide='!sldshwCtrl.results.length'>
 	<div class='row'>
 		<span class='col-xs-2 chevron'>
-			<button class='btn btn-primary' data-ng-disabled='sldshwCtrl.index == 0' data-ng-click='sldshwCtrl.index = sldshwCtrl.index - 1'>
+			<button class='btn btn-giphy' data-ng-disabled='sldshwCtrl.index == 0' data-ng-click='sldshwCtrl.index = sldshwCtrl.index - 1'>
 				<span class='glyphicon glyphicon-chevron-left'></span>
 			</button>
 		</span>
@@ -13,7 +13,7 @@
 			<img class='img-responsive' data-ng-src='{{sldshwCtrl.results[sldshwCtrl.index].images.original.url}}'>
 		</span>
 		<span class='col-xs-2 chevron'>
-			<button class='btn btn-primary' data-ng-disabled='sldshwCtrl.index == sldshwCtrl.results.length - 1' data-ng-click='sldshwCtrl.index = sldshwCtrl.index + 1'>
+			<button class='btn btn-giphy' data-ng-disabled='sldshwCtrl.index == sldshwCtrl.results.length - 1' data-ng-click='sldshwCtrl.index = sldshwCtrl.index + 1'>
 				<span class='glyphicon glyphicon-chevron-right'></span>
 			</button>
 		</span>
@@ -21,4 +21,4 @@
 </div>
 
 <p class='no-results' data-ng-show='!sldshwCtrl.results.length && query.length'>No results for {{query}}</p>
-<p class='no-results' data-ng-show='!query.length'>Search something! Try: <a data-ng-click='query = "puppy"'>puppy</span></p>
+<p class='no-results' data-ng-show='!query.length'>Search something! Try: <a data-ng-click='query = suggestion'>{{suggestion}}</span></p>

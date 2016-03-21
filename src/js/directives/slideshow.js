@@ -31,6 +31,13 @@
 		_this.results = [];
 
 		/**
+		 * @name  suggestionBank
+		 * 
+		 * @description Suggested queries for when there is no search term
+		 */
+		var suggestionBank = ['gengar', 'tacos', 'bulgaria', 'tame impala', 'GOB bluth'];
+
+		/**
 		 * @name promise
 		 *
 		 * @description Calls data service with query
@@ -65,17 +72,20 @@
 		/**
 		 * @name $watch
 		 * 
-		 * @description Watch function to update results when the query is changed.
+		 * @description Watch function to update results when the query is changed. Updates suggestion
+		 *              if there is no query.
 		 */
 		$scope.$watch("query", function() {
-			_this.search();
-		});
+			if(!$scope.query.length) {
+				$scope.suggestion = suggestionBank[Math.floor(Math.random() * suggestionBank.length)];
+			}
+			_this.search();	
+		});		
 
 		/**
 		 *	Initial call to search the default search term.
 		 */
 		_this.search();
-
     }])
     
     /**

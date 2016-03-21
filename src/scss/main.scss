@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700);
 
+$main-color: #3DD69B;
+
 body {
 	background-color: #F4F4F8;
 	font-family: 'Roboto', sans-serif;
@@ -17,6 +19,11 @@ nav {
 	.search-bar {
 		width: 98%;
 		margin: 1%;
+		&:focus { 
+		    outline: none !important;
+		    border:1px solid $main-color;
+			box-shadow: 0px 0px 5px 1px #888888;
+		}
 	}
 	.form-control {
 		display: inline;
@@ -38,7 +45,28 @@ nav {
 		margin-top:15%;
 		button {
 			width:100%;
-			height: 150px;
+			height: 75px;
+		}
+		.btn-giphy {
+			color: white;
+			background-color: $main-color;
+			box-shadow: 1px 1px 0px #888888;
+			&:hover {
+				color: white;
+			}
+			&:active {
+				color: white;
+				box-shadow: none;
+				outline: none;
+			}
+			&:focus {
+				color: white;
+				outline: none;
+			}
+			&:disabled {
+				background-color: lighten($main-color, 15%);
+				box-shadow: none;
+			}
 		}
 	}
 	img {
@@ -51,6 +79,12 @@ nav {
 .no-results {
 	text-align: center;
 	margin-top: 35px;
-	font-size: 5em;
+	font-size: 2em;
 	font-weight: 700;
+	a {
+		color: $main-color;
+		&:hover {
+			color: darken($main-color, 25%);
+		}
+	}
 }
