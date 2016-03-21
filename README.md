@@ -1,6 +1,9 @@
 # Giphy Slideshow
 
-Slideshow created using Giphy's API. After building, the app is viewable at localhost:8080
+Slideshow created using Giphy's API. After building, the app is viewable at:
+
++ https://localhost:8080 for the distributed version
++ https://localhost:9090 for the source version
 
 [Live Version Here](http://giphy.timholm.es)
 
