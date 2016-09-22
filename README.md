@@ -5,8 +5,6 @@ Slideshow created using Giphy's API. After building, the app is viewable at:
 + https://localhost:8080 for the distributed version
 + https://localhost:9090 for the source version
 
-[Live Version Here](http://giphy.timholm.es)
-
 ## Building
 
 Instructions intended for Linux users. Mac users may need to prefix these comands with the 'sudo' keyword.
